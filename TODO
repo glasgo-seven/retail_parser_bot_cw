@@ -1,19 +1,19 @@
 Telegram-bot - поиск наиболее выгодного предложения
-[ ]	Бот получает сообщение от пользователя
+[*]	Бот получает сообщение от пользователя
 [ ]	Парсит выбранные сайты (WB, ...)
 	[ ]	WILDBERRIES
 		https://www.wildberries.ru/catalog/0/search.aspx?sort=popular&search=данные+для+поиска
 		<div id="c60730554" class="product-card j-card-item j-good-for-listing-event hover" data-card-index="0" data-popup-nm-id="60730554" data-link="data-extra-analitics-code{:extraAnaliticsCode}" style="min-height: 488px;">
 		https://www.wildberries.ru/catalog/{id-товара}/detail.aspx
-	[ ]	LAMODA
+	[*]	LAMODA
 		https://www.lamoda.ru/catalogsearch/result/?q=airforce&submit=y&gender_section=women
 		<div class="grid__catalog">
 		<a href="/p/rtlabh469901/shoes-nike-kedy/" class="wCjUeog4KtWw64IplV1e6 _3dch7Ytt3ivpea7TIsKVjb x-product-card__pic x-product-card__pic-catalog" role="link">
 		https://www.lamoda.ru/p/rtlaaw513501/shoes-nike-kedy/
 	[ ]	
-[ ]	Выдаёт самый выгодный вариант
-[ ]	Показывает другие варианты
-[ ]	Ставить товар в отслеживание
-	[ ]	БД товаров, графа отслеживающих людей
-	[ ]	Когда кто-то будет проверять такой же товар, если цена выгоднее, чем была - уведомление всем, кто следит
-	[ ]	Самостоятельное обновление в периоде
+[*]	Выдаёт самый выгодный вариант
+[*]	Показывает другие варианты
+[*]	Ставить товар в отслеживание
+	[*]	БД товаров, графа отслеживающих людей
+	[*]	Когда кто-то будет проверять такой же товар, если цена выгоднее, чем была - уведомление всем, кто следит
+	[*]	Самостоятельное обновление в периоде

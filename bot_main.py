@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import codecs
-from gc import callbacks
 import os
-from random import randint
-from time import time, sleep
-import sys
 
 import telebot
 from telebot import types
@@ -67,7 +62,7 @@ def search_command(message: types.Message):
 			keyboard.add(button_subscribe)
 
 			bot_send_msg(message, data['caption'])
-			bot.send_photo(message.chat.id, data['img_src'], caption=f"🔥 ОБНОВЛЕНИЕ 🔥\n{data['title']}", reply_markup=keyboard, parse_mode= 'Markdown')
+			bot.send_photo(message.chat.id, data['img_src'], caption=f"ОБНОВЛЕНИЕ\n{data['title']}", reply_markup=keyboard, parse_mode= 'Markdown')
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_query(call: types.CallbackQuery):

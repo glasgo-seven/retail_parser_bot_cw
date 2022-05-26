@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests as req
 import sys
-from time import time, strftime, localtime
 
 from bot_alert import *
 

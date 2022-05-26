@@ -39,7 +39,6 @@ def start_command(message: types.Message):
 
 @bot.message_handler(commands=['search'])
 def search_command(message: types.Message):
-# msg_id = f'{message.chat.id} - {message.chat.title if message.chat.title != None else "PM"} - {message.from_user.username}'
 	bot_got_msg(message)
 	bot_database.userDB_update(message)
 
@@ -51,8 +50,6 @@ def search_command(message: types.Message):
 	if not retail_data:
 		bot_send_msg(message, 'По Вышему запросу ничего не найдено...')
 	else:
-		# results = analysis(retail_data)
-
 		bot_send_msg(message, 'Найдено на LAMODA:')
 		for key in retail_data:
 			data = retail_data[key]
@@ -70,10 +67,7 @@ def search_command(message: types.Message):
 			keyboard.add(button_subscribe)
 
 			bot_send_msg(message, data['caption'])
-			bot.send_photo(message.chat.id, data['img_src'], caption=data['title'], reply_markup=keyboard, parse_mode= 'Markdown')
-		# add_item_to_db()
-
-		# follow_item()
+			bot.send_photo(message.chat.id, data['img_src'], caption=f"🔥 ОБНОВЛЕНИЕ 🔥\n{data['title']}", reply_markup=keyboard, parse_mode= 'Markdown')
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_query(call: types.CallbackQuery):
@@ -94,7 +88,7 @@ def handle_query(call: types.CallbackQuery):
 			bot.send_photo(
 				id,
 				new_data['img_src'],
-				caption=f"ОБНОВЛЕНИЕ!\n{new_data['title']}\n{new_data['price']}",
+				caption=f"🔥 ОБНОВЛЕНИЕ! 🔥\n{new_data['title']}\n{new_data['price']}",
 				reply_markup=keyboard, parse_mode= 'Markdown')
 	if alert_data[0] == 1:
 		bot_send_msg(call.message, 'Товар отслеживается!')

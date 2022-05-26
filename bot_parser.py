@@ -24,7 +24,7 @@ def parse_LMD_get_card_info(card):
 	}
 
 def parse_LMD(message, msg_data):
-	# try:
+	try:
 		resp = req.get(f"https://www.lamoda.ru/catalogsearch/result/?q={'%20'.join(msg_data)}")
 		soup = BeautifulSoup(resp.text, 'lxml')
 
@@ -34,10 +34,9 @@ def parse_LMD(message, msg_data):
 		for i in range(5 if len(item_card) >= 5 else len(item_card)):
 			item_data[i] = parse_LMD_get_card_info(item_card[i])
 		return analyse(item_data)
-
-	# except:
-	# 	error(f"[ ERROR ] in PARSE_LMD of USER-{message.from_user.id} : {sys.exc_info()[0]}.")
-	# 	return None
+	except:
+		error(f"[ ERROR ] in PARSE_LMD of USER-{message.from_user.id} : {sys.exc_info()[0]}.")
+		return None
 
 def analyse(item_data):
 	min_price = -1
